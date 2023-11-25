@@ -2,171 +2,107 @@
 
 class Figure
 {
-public:
-
-    void print_1()
-    {
-        std::cout << name << ": " << std::endl;
-        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << std::endl;
-        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << "\n " << std::endl;
-    }
-    void print_2()
-    {
-        std::cout << name << ": " << std::endl;
-        std::cout << "Стороны: " << "a=" << a << " b=" << b << " c=" << c << " d="<< d << std::endl;
-        std::cout << "Углы: " << "A=" << A << " B=" << B << " C=" << C << " D=" << d << "\n " << std::endl;
-    }
-
 protected:
-    int a, b, c, d;
-    int A, B, C, D;
     std::string name;
-    int sides_count;
-
-    Figure()
-    {
-        a = b = c = d = 0;
-        A = B = C = D = 0;
-        name = "Фигура";
-        sides_count = 0;
-    }
 };
 
 
 class Triangle : public Figure
 {
+protected:
+    double a, b, c;
+    double A, B, C;
 public:
-    Triangle()
+    Triangle(double a, double b, double c, double A, double B, double C) : a(a), b(b), c(c), A(A), B(B), C(C)
     {
         name = "Треугольник";
-        a = 10; b = 20; c = 30;
-        A = 50; B = 60; C = 70;
     }
-private:
 };
 
-class R_triangle : public Figure
+class R_triangle : public Triangle
 {
 public:
-    R_triangle()
+    R_triangle(double a, double b, double c, double A, double B, double C) : Triangle(a,b,c,A,B,90)
     {
-        name = "Прямоугольный треугольник";
-        a = 10; b = 20; c = 30;
-        A = 50; B = 60; C = 90;
+        name = "прямоугольный треугольник";
     }
-private:
 };
 
-class I_triangle : public Figure
+class I_triangle : public Triangle
 {
 public:
-    I_triangle()
+    I_triangle(double a, double b, double A, double B) : Triangle(a, b, a, A, B, A)
     {
-        name = "Равнобедренный треугольник";
-        a = 10; b = 20; c = 10;
-        A = 50; B = 60; C = 50;
+        name = "равнобедренный треугольник";
     }
-private:
 };
 
-class Eq_triangle : public Figure
+class Eq_triangle : public Triangle
 {
 public:
-    Eq_triangle()
+    Eq_triangle(double a) : Triangle(a, a, a, 60, 60, 60)
     {
-        name = "Равносторонний треугольник:";
-        a = 30; b = 30; c = 30;
-        A = 60; B = 60; C = 60;
+        name = "равносторонний треугольник ";
     }
-private:
 };
 
 class Quadrangle : public Figure
 {
+protected:
+    double a, b, c, d;
+    double A, B, C, D;
 public:
-    Quadrangle()
+    Quadrangle(double a, double b, double c, double d, double A, double B, double C, double D) : a(a), b(b), c(c), d(d), A(A), B(B), C(C), D(D)
     {
-        name = "Четырёхугольник:";
-        a = 10; b = 20; c = 30; d = 40;
-        A = 50; B = 60; C = 70; D = 80;
+        name = "Четырехугольник";
     }
-private:
 };
 
-class Rectangle : public Figure
+class Rhombus : public Quadrangle
 {
 public:
-    Rectangle()
+    Rhombus(double a, double A, double B) : Quadrangle(a, a, a, a, A, B, A, B)
     {
-        name = "Прямоугольник:";
-        a = 10; b = 20; c = 10; d = 20;
-        A = 90; B = 90; C = 90; D = 90;
+        name = "Ромб";
     }
-private:
 };
 
-class Square : public Figure
+class Square : public Rhombus
 {
 public:
-    Square()
+    Square(double a) : Rhombus(a,90, 90)
     {
-        name = "Квадрат:";
-        a = 20; b = 20; c = 20; d = 20;
-        A = 90; B = 90; C = 90; D = 90;
+        name = "Квадрат";
     }
-private:
 };
 
-class Parallelogram : public Figure
+class Rectangle : public Quadrangle
 {
 public:
-    Parallelogram()
+    Rectangle(double a, double b) : Quadrangle(a, b, a, b, 90, 90, 90, 90)
     {
-        name = "Параллелограмм:";
-        a = 20; b = 30; c = 20; d = 30;
-        A = 30; B = 40; C = 30; D = 40;
+        name = "прямоугольник";
     }
-private:
 };
 
-class Rhombus : public Figure
+
+class Parallelogram : public Quadrangle
 {
 public:
-    Rhombus()
+    Parallelogram(double a, double b, double A, double B) : Quadrangle(a, b, a, b, A, B, A, B)
     {
-        name = "Ромб:";
-        a = 30; b = 30; c = 30; d = 30;
-        A = 30; B = 40; C = 30; D = 40;
+        name = "Параллелограмм";
     }
-private:
 };
+
+
 
 
 
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    Triangle triangle;
-    R_triangle R_triangle;
-    I_triangle I_triangle;
-    Eq_triangle Eq_triangle;
-    Quadrangle Quadrangle;
-    Rectangle Rectangle;
-    Square Square;
-    Parallelogram Parallelogram;
-    Rhombus Rhombus;
-
-
-
-    triangle.print_1();
-    R_triangle.print_1();
-    I_triangle.print_1();
-    Eq_triangle.print_1();
-    Quadrangle.print_2();
-    Rectangle.print_2();
-    Square.print_2();
-    Parallelogram.print_2();
-    Rhombus.print_2();
+       
   
     return 0;
 }
