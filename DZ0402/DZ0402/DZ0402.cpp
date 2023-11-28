@@ -35,9 +35,13 @@ void sort(Adress* arr, int SIZE)
 
 	for (int i = 0; i < SIZE; i++)
 	{
-		for (int j = 0; j < SIZE; j++)
+		for (int j = 0; j < SIZE - 1; j++)
 		{
-			
+			if (arr[i].GetCity() > arr[j].GetCity())
+			{
+				Adress temp = arr[j];
+				
+			}
 		}
 	}
 
@@ -75,7 +79,7 @@ int main()
 
 		out_file << SIZE << std::endl;
 
-		for (int j = SIZE - 1; j > -1; j--) // выводим адрес 
+		for (int j = SIZE; j < SIZE; j++) // выводим адрес 
 		{
 			out_file << arr[j].OutputAdress() << std::endl;
 		}
