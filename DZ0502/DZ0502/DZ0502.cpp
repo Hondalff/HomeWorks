@@ -2,6 +2,11 @@
 
 class Figure
 {
+public:
+    virtual void print_info(class *Figure)
+    {
+
+    }
 protected:
     std::string name;
 };

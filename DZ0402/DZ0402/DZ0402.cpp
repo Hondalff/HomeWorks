@@ -37,7 +37,7 @@ void sort(Adress* arr, int SIZE)
 	{
 		for (int j = 0; j < SIZE - 1; j++)
 		{
-			if (arr[i].GetCity() > arr[j].GetCity())
+			if (arr[j].GetCity() > arr[j].GetCity())
 			{
 				Adress temp = arr[j];
 				
