@@ -76,11 +76,12 @@ int main()
 			arr[i] = Adress(city, street, home, apartment);
 		}
 
+		
 		sort(arr, SIZE);
 
 		out_file << SIZE << std::endl;
 
-		for (int j = SIZE; j < SIZE; j++) // выводим адрес 
+		for (int j = 0; j < SIZE; j++) // выводим адрес 
 		{
 			out_file << arr[j].OutputAdress() << std::endl;
 		}
