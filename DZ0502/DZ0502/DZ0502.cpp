@@ -3,10 +3,7 @@
 class Figure
 {
 public:
-    virtual void print_info(class *Figure)
-    {
-
-    }
+      
 protected:
     std::string name;
 };
@@ -22,6 +19,15 @@ public:
     {
         name = "Треугольник";
     }
+   
+    virtual void print()
+    {
+        std::cout << name << ": " << std::endl;
+        std::cout << "Количество сторон: 3" << std::endl;
+        std::cout << "Стороны: " << "a: " << a << " b: " << b << " c: " << c << std::endl;
+        std::cout << "углы: " << "A: " << A << " B: " << B << " C: " << C << std::endl;
+      
+    }
 };
 
 class R_triangle : public Triangle
@@ -31,6 +37,7 @@ public:
     {
         name = "прямоугольный треугольник";
     }
+
 };
 
 class I_triangle : public Triangle
@@ -60,6 +67,14 @@ public:
     Quadrangle(double a, double b, double c, double d, double A, double B, double C, double D) : a(a), b(b), c(c), d(d), A(A), B(B), C(C), D(D)
     {
         name = "Четырехугольник";
+    }
+    virtual void print()
+    {
+        std::cout << name << ": " << std::endl;
+        std::cout << "Количество сторон: 3" << std::endl;
+        std::cout << "Стороны: " << "a: " << a << " b: " << b << " c: " << c << " d: " << d << std::endl;
+        std::cout << "углы: " << "A: " << A << " B: " << B << " C: " << C << " D: " << D << std::endl;
+
     }
 };
 
@@ -101,13 +116,15 @@ public:
 };
 
 
-
-
-
 int main()
 {
     setlocale(LC_ALL, "Russian");
-       
+    Triangle triangle(10,20,30,50,60,70);
+    R_triangle r_triangle();
+    
+   
+    triangle.print();
+   
   
     return 0;
 }
