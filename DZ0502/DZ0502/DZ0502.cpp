@@ -120,10 +120,10 @@ int main()
 {
     setlocale(LC_ALL, "Russian");
     Triangle triangle(10,20,30,50,60,70);
-    R_triangle r_triangle();
+
     
    
-    triangle.print();
+    
    
   
     return 0;
