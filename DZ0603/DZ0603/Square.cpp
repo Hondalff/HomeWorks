@@ -1,4 +1,4 @@
-#include "Square.h"
+#include "Header.h"
 
 Square::Square(double a) : Rhombus(a, 90, 90)
 {

@@ -1,4 +1,4 @@
-#include "Quadrangle.h"
+#include "Header.h"
 
 Quadrangle::Quadrangle(double a, double b, double c, double d, double A, double B, double C, double D) : a(a), b(b), c(c), d(d), A(A), B(B), C(C), D(D)
 {

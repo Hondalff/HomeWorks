@@ -1,5 +1,6 @@
 #pragma once
 #include "Header.h"
+
 class Triangle : public Figure
 {
 protected:

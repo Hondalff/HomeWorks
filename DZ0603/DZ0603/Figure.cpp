@@ -1,3 +1,3 @@
-#include "Figure_Head.h"
+#include "Header.h"
 
 void Figure::print() {};

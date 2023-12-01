@@ -1,4 +1,4 @@
-#include "Eq_triangle.h"
+#include "Header.h"
 
 Eq_triangle::Eq_triangle(double a) : Triangle(a, a, a, 60, 60, 60)
 {

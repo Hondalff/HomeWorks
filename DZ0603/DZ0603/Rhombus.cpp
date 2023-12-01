@@ -1,4 +1,4 @@
-#include "Rhombus.h"
+#include "Header.h"
 
 Rhombus::Rhombus(double a, double A, double B) : Quadrangle(a, a, a, a, A, B, A, B)
 {

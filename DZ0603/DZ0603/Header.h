@@ -6,7 +6,7 @@
 #include "I_triangle.h"
 #include "Eq_triangle.h"
 #include "Quadrangle.h"
-#include"Rhombus.h"
+#include "Rhombus.h"
 #include "Square.h"
 #include "Rectangle.h"
 #include "Parallelogram.h"
