@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+
 #define MODE 1
 
 void add()
@@ -29,6 +30,4 @@ int main()
 #else
 #error "MODE не определена. Определите её!"
 #endif // MODE
-
-
 }
