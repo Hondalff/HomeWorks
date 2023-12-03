@@ -3,6 +3,7 @@
 class Figure
 {
 public:
+    virtual bool check() = 0;
     virtual void print() = 0;
 protected:
     std::string name;
@@ -19,7 +20,7 @@ public:
     {
         name = "Треугольник";
     }
-    bool check()
+    virtual bool check()
     {
         int a = A + B + C;
         if (a == 180)
@@ -53,9 +54,9 @@ public:
     {
         name = "прямоугольный треугольник";
     }
-    bool check()
+    virtual bool check()
     {
-        if (R_triangle::check())
+        if (Triangle::check())
         {
             if (this ->C == 90)
             {
@@ -74,9 +75,9 @@ public:
     {
         name = "равнобедренный треугольник";
     }
-    bool check()
+    virtual bool check()
     {
-        if (I_triangle::check())
+        if (Triangle::check())
         {
             if (a == c && A == C)
             {
@@ -95,9 +96,9 @@ public:
     {
         name = "равносторонний треугольник ";
     }
-    bool check()
+    virtual bool check()
     {
-        if (Eq_triangle::check())
+        if (Triangle::check())
         {
             if (a == c == b && A == B == C == 60)
             {
@@ -135,7 +136,7 @@ public:
         std::cout << std::endl;
 
     }
-    bool check()
+    virtual bool check()
     {
         int a = A + B + C + D;
         if (a == 360)
@@ -153,7 +154,7 @@ public:
     {
         name = "Ромб";
     }
-    bool check()
+    virtual bool check()
     {
         if (Quadrangle::check())
         {
@@ -173,7 +174,7 @@ public:
     {
         name = "Квадрат";
     }
-    bool check()
+    virtual bool check()
     {
         if (Rhombus::check())
         {
@@ -193,7 +194,7 @@ public:
     {
         name = "прямоугольник";
     }
-    bool check()
+    virtual bool check()
     {
         if (Quadrangle::check())
         {
@@ -214,7 +215,7 @@ public:
     {
         name = "Параллелограмм";
     }
-    bool check()
+    virtual bool check()
     {
         if (Quadrangle::check())
         {
