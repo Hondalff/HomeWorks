@@ -3,7 +3,7 @@
 Rhombus::Rhombus(double a, double A, double B) : Quadrangle(a, a, a, a, A, B, A, B)
 {
     name = "Ромб";
-    if (!check()) throw std::domain_error("Ошибка создания фигуры. Причина: не все стороны равны");
+    if (!check()) throw Error("Ошибка создания фигуры. Причина: не все стороны равны");
 }
 bool Rhombus::check()
 {

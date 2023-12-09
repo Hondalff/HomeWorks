@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="DZ0802.cpp" />
     <ClCompile Include="Eq_triangle.cpp" />
+    <ClCompile Include="Error.cpp" />
     <ClCompile Include="Figure.cpp" />
     <ClCompile Include="I_triangle.cpp" />
     <ClCompile Include="Parallelogram.cpp" />
@@ -141,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Eq_triangle.h" />
+    <ClInclude Include="Erorr.h" />
     <ClInclude Include="Figure_Head.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="I_triangle.h" />

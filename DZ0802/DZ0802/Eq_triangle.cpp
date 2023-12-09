@@ -3,7 +3,7 @@
 Eq_triangle::Eq_triangle(double a) : Triangle(a, a, a, 60, 60, 60)
 {
     name = "равносторонний треугольник ";
-    if (!check()) throw std::domain_error("Ошибка создания фигуры. Причина: все стороны не равны, все углы не равны");
+    if (!check()) throw Error("Ошибка создания фигуры. Причина: все стороны не равны, все углы не равны");
 }
 bool Eq_triangle::check()
 {

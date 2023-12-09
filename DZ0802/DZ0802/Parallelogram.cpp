@@ -3,7 +3,7 @@
 Parallelogram::Parallelogram(double a, double b, double A, double B) : Quadrangle(a, b, a, b, A, B, A, B)
 {
     name = "Параллелограмм";
-    if (!check()) throw std::domain_error("Ошибка создания фигуры. Причина: Cтороны и углы не попарно равны");
+    if (!check()) throw Error("Ошибка создания фигуры. Причина: Cтороны и углы не попарно равны");
 }
 bool Parallelogram::check()
 {

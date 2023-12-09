@@ -54,6 +54,9 @@
     <ClCompile Include="Triangle.cpp">
       <Filter>Исходные файлы\Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Error.cpp">
+      <Filter>Исходные файлы\Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h">
@@ -87,6 +90,9 @@
       <Filter>Файлы заголовков\Classes_Header</Filter>
     </ClInclude>
     <ClInclude Include="Triangle.h">
+      <Filter>Файлы заголовков\Classes_Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Erorr.h">
       <Filter>Файлы заголовков\Classes_Header</Filter>
     </ClInclude>
   </ItemGroup>

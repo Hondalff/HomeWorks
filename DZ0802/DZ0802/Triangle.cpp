@@ -3,7 +3,7 @@
 Triangle::Triangle(double a, double b, double c, double A, double B, double C) : a(a), b(b), c(c), A(A), B(B), C(C)
 {
     name = "Треугольник";
-    if(!check()) throw std::domain_error("Ошибка создания фигуры. Причина: сумма углов не равна 180");
+    if(!check()) throw Error("Ошибка создания фигуры. Причина: сумма углов не равна 180");
 }
 
 bool Triangle::check()

@@ -3,7 +3,7 @@
 Rectangle::Rectangle(double a, double b) : Quadrangle(a, b, a, b, 90, 90, 90, 90)
 {
     name = "прямоугольник";
-    if (!check()) throw std::domain_error("Ошибка создания фигуры. Причина: не попарно равны");
+    if (!check()) throw Error("Ошибка создания фигуры. Причина: не попарно равны");
 }
 bool Rectangle::check()
 {

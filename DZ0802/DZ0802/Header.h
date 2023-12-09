@@ -10,4 +10,5 @@
 #include "Square.h"
 #include "Rectangle.h"
 #include "Parallelogram.h"
+#include "Erorr.h"
 #include <exception>
