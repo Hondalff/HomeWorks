@@ -14,44 +14,33 @@ public:
 	}
 	 bool operator==(Fraction right)
 	{
-		 if (numerator_ == right.numerator_ && denominator_ == right.denominator_) { return true; }
+		 if (numerator_ * right.denominator_ == denominator_ * right.numerator_) { return true; }
 		 else { return false; }
 	}
 	 bool operator!=(Fraction right)
 	 {
-		 if (numerator_ != right.numerator_ || denominator_ != right.denominator_) { return true; }
+		 if (numerator_ * right.denominator_ != denominator_ * right.numerator_) { return true; }
 		 else { return false; }
 	 }
 	 bool operator<(Fraction right)
 	 {
-		 int a, b;
-		 a = numerator_ + denominator_;
-		 b = right.numerator_ + right.denominator_;
-		 if (a < b) { return true; }
+		 if (numerator_ * right.denominator_ < denominator_ * right.numerator_) { return true; }
 		 else { return false; }
 	 }
 	 bool operator>(Fraction right)
 	 {
-		 int a, b;
-		 a = numerator_ + denominator_;
-		 b = right.numerator_ + right.denominator_;
-		 if (a > b) { return true; }
+		 if (numerator_ * right.denominator_ > denominator_ * right.numerator_) { return true; }
 		 else { return false; }
 	 }
 	 bool operator<=(Fraction right)
 	 {
-		 int a, b;
-		 a = numerator_ + denominator_;
-		 b = right.numerator_ + right.denominator_;
-		 if (a <= b) { return true; }
+		 
+		 if (numerator_ * right.denominator_ <= denominator_ * right.numerator_) { return true; }
 		 else { return false; }
 	 }
 	 bool operator>=(Fraction right)
 	 {
-		 int a, b;
-		 a = numerator_ + denominator_;
-		 b = right.numerator_ + right.denominator_;
-		 if (a >= b) { return true; }
+		 if (numerator_ * right.denominator_ >= denominator_ * right.numerator_) { return true; }
 		 else { return false; }
 	 }
 };
