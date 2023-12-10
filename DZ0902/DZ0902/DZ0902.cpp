@@ -70,27 +70,25 @@ public:
 	friend Fraction operator/(Fraction left, Fraction right);
 	Fraction operator++()
 	{
-		numerator_ += 1;
-		denominator_ += 1;
+		numerator_ += denominator_;
 		return Fraction(numerator_, denominator_);
 	}
 	Fraction operator++(int)
 	{
-		numerator_ += 1;
-		denominator_ += 1;
-		return Fraction(numerator_, denominator_);
+		Fraction temp = *this;
+		++(*this);
+		return temp;
 	}
 	Fraction operator--()
 	{
-		numerator_ -= 1;
-		denominator_ -= 1;
+		numerator_ -= denominator_;
 		return Fraction(numerator_, denominator_);
 	}
 	Fraction operator--(int)
 	{
-		numerator_ -= 1;
-		denominator_ -= 1;
-		return Fraction(numerator_, denominator_);
+		Fraction temp = *this;
+		--(*this);
+		return temp;
 	}
 };
 
