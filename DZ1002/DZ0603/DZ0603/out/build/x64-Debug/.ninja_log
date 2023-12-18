@@ -1,0 +1,13 @@
+# ninja log v5
+8	485	7245214463431187	CMakeFiles/Project_DZ1002.dir/Figure.cpp.obj	690ac54fa0442949
+5	497	7245214463610715	CMakeFiles/Project_DZ1002.dir/Eq_triangle.cpp.obj	960406834dce75de
+23	553	7245214463870020	CMakeFiles/Project_DZ1002.dir/R_triangle.cpp.obj	4061ed3826dce970
+1	558	7245214464139299	CMakeFiles/Project_DZ1002.dir/DZ0603.cpp.obj	c581dad3b078259e
+26	609	7245214464742805	CMakeFiles/Project_DZ1002.dir/Rectangle.cpp.obj	c6d74e65bebc617e
+13	658	7245214465231523	CMakeFiles/Project_DZ1002.dir/Parallelogram.cpp.obj	24c6d1b6d7788ca7
+10	585	7245214464503439	CMakeFiles/Project_DZ1002.dir/I_triangle.cpp.obj	aff056fd4dca7e01
+17	709	7245214465754844	CMakeFiles/Project_DZ1002.dir/Quadrangle.cpp.obj	fd9613de8e80f071
+490	964	7245214468294133	CMakeFiles/Project_DZ1002.dir/Rhombus.cpp.obj	d7e06dac2e4b3f3b
+497	964	7245214468294133	CMakeFiles/Project_DZ1002.dir/Square.cpp.obj	2d3181a308580618
+553	979	7245214468458836	CMakeFiles/Project_DZ1002.dir/Triangle.cpp.obj	b446839154bb0096
+979	1361	7245214471863443	Project_DZ1002.exe	75615c703d40c2bb
