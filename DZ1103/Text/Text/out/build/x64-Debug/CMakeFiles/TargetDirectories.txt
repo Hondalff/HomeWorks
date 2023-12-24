@@ -1,0 +1,4 @@
+G:/Code_Project/HomeWorks/DZ1103/Text/Text/out/build/x64-Debug/CMakeFiles/Text.dir
+G:/Code_Project/HomeWorks/DZ1103/Text/Text/out/build/x64-Debug/CMakeFiles/DZ_File.dir
+G:/Code_Project/HomeWorks/DZ1103/Text/Text/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+G:/Code_Project/HomeWorks/DZ1103/Text/Text/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
