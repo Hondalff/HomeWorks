@@ -16,11 +16,13 @@ protected:
     int timeToRest; // время до отдыха
     int reductionRate; // коэффициент сокращения растояния (Воздушные)
     std::string nameTransport;  // имя транспорта
+    int distance; // проходимое растояние
 
     // Конструктор
-    Transport(int status, int speed, int timeRest, int timeToRest, int reductionRate, std::string nameTransport) : status(status), speed(speed), timeRest(timeRest), timeToRest(timeToRest), reductionRate(reductionRate), nameTransport(nameTransport){};
+    Transport(int status, int speed, int timeRest, int timeToRest, int reductionRate, std::string nameTransport, int distance) : status(status), speed(speed), timeRest(timeRest), timeToRest(timeToRest), reductionRate(reductionRate), nameTransport(nameTransport), distance(distance){};
 
 public:
+
     virtual void PrintInfo() // вывод информации на консоль об объекте.
     {
         std::cout << "Status: " << status << std::endl;
@@ -29,6 +31,7 @@ public:
         std::cout << "Time to Rest: " << timeToRest << std::endl;
         std::cout << "Reduction Rate: " << reductionRate << std::endl;
         std::cout << "Name Transport: " << nameTransport << std::endl;
+        std::cout << "distance: " << distance << std::endl;
         std::cout << std::endl;
     }
 
@@ -40,7 +43,7 @@ protected:
     
 
 public:
-    GroundTransport(int speed, int timeRest, int timeToRest, std::string nameTransport) : Transport(Ground, speed, timeRest, timeToRest, 0, nameTransport) {};
+    GroundTransport(int speed, int timeRest, int timeToRest, std::string nameTransport, int distance) : Transport(Ground, speed, timeRest, timeToRest, 0, nameTransport, distance) {};
 };
 
 class AirTransport : public Transport // воздушный транспорт, от которого они будут наследоваться 
@@ -48,67 +51,85 @@ class AirTransport : public Transport // воздушный транспорт, 
 protected:
 
 public:
-    AirTransport(int speed, int reductionRate, std::string nameTransport) : Transport(Air, speed, 0, 0, reductionRate, nameTransport) {};
+    AirTransport(int speed, int reductionRate, std::string nameTransport, int distance) : Transport(Air, speed, 0, 0, reductionRate, nameTransport, distance) {};
 };
 
+// наземный
 class Camel : public GroundTransport  // Верблюд
 {
 private:
     int countRate = 0;
+    int time = 0;
 public:
-    Camel() : GroundTransport(10, 5, 30, "Верблюд") {};
+    Camel(int distance) : GroundTransport(10, 5, 30, "Верблюд", distance) {};
+
+    void printdistance()
+    {
+        countRate = distance / (speed * timeToRest);
+        time = distance / speed;
+        if (countRate >= 2)
+        {
+            time += 5 + (8 * (countRate - 1));
+        }
+        else if (countRate == 1)
+        {
+            time += 5;
+        }
+        std::cout << "Time: " << time << std::endl;
+    }
 };
 class FastCamel : public GroundTransport  // Верблюд-быстроход
 {
 private:
     int countRate = 0;
 public:
-    FastCamel() : GroundTransport(40, 5, 10, "Верблюд-быстроход") {};
+    FastCamel(int distance) : GroundTransport(40, 5, 10, "Верблюд-быстроход", distance) {};
 };
 class Centaur : public GroundTransport  // Кентавр
 {
 private:
     
 public:
-    Centaur() : GroundTransport(15, 2, 8, "Кентавр") {};
+    Centaur(int distance) : GroundTransport(15, 2, 8, "Кентавр", distance) {};
 };
 class TerrainBoots : public GroundTransport  // Ботинки-вездеходы
 {
 private:
     int countRate = 0;
 public:
-    TerrainBoots() : GroundTransport(6, 10, 60, "Ботинки-вездеходы") {};
+    TerrainBoots(int distance) : GroundTransport(6, 10, 60, "Ботинки-вездеходы", distance) {};
 };
 
-
+// Воздушный
 class AirplaneCarpet : public AirTransport  // Верблюд
 {
 private:
-    int reductionRate = 0;
+    
 public:
-    AirplaneCarpet(int distance) : AirTransport(10, reductionRate, "Ковёр-самолёт")
+    AirplaneCarpet(int distance) : AirTransport(10, 0, "Ковёр-самолёт", distance)
     {
-        if (distance < 1000) { reductionRate = 0; }
-        else if (distance < 5000) { reductionRate = 3; }
-        else if (distance < 10000) { reductionRate = 10; }
-        else if (distance >= 10000) { reductionRate = 5; }
+        if (distance < 1000) { Transport::reductionRate = 0; }
+        else if (distance < 5000) { Transport::reductionRate = 3; }
+        else if (distance < 10000) { Transport::reductionRate = 10; }
+        else if (distance >= 10000) { Transport::reductionRate = 5; }
     };
+
 };
 class Eagle : public AirTransport  // Орёл
 {
 private:
     
 public:
-    Eagle() :AirTransport(8, 6, "Орёл") {};
+    Eagle(int distance) :AirTransport(8, 6, "Орёл", distance) {};
 };
 class Broom : public AirTransport  // Метла
 {
 private:
-    int reductionRate;
+    
 public:
-    Broom(int distance) :AirTransport(20, reductionRate, "Метла")
+    Broom(int distance) :AirTransport(20, 0, "Метла", distance)
     {
-        reductionRate = distance / 1000;
+        Transport::reductionRate = distance / 1000;
     };
 };
 
@@ -124,6 +145,12 @@ int main()
     std::cout << std::endl;
 
     AirplaneCarpet Carpet(distance);
-    Carpet.PrintInfo();
+    //Carpet.PrintInfo();
 
+    Camel Camel(distance);
+    Camel.PrintInfo();
+    Camel.printdistance();
+
+    Broom broom(distance);
+    //broom.PrintInfo();
 }
