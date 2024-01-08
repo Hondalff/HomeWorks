@@ -35,22 +35,13 @@ class GroundTransport : public Transport // Наземный транспорт,
 {
 protected:
     int timeToRest; // время до отдыха
-    int countRate = 0;
-    int time = 0;
+    int countRest = 0; // количество отсановок
+    int time = 0; // время пути
 
-    int TimePassage()
+   void TimePassage()
     {
-        countRate = distance / (speed * timeToRest);
+        countRest = distance / (speed * timeToRest);
         time = distance / speed;
-        if (countRate >= 2)
-        {
-            time += 5 + (8 * (countRate - 1));
-        }
-        else if (countRate == 1)
-        {
-            time += 5;
-        }
-
     }
 
 public:
@@ -74,22 +65,23 @@ public:
 class Camel : public GroundTransport  // Верблюд
 {
 private:
-    int time = 0;
+    
+
 public:
     Camel(int distance) : GroundTransport("Верблюд", 10, 30, distance) {};
-
-    void printdistance()
+    int TimePassage()
     {
-        countRate = distance / (speed * timeToRest);
-        time = distance / speed;
-        if (countRate >= 2)
+        GroundTransport::TimePassage();
+
+        if (countRest >= 2)
         {
-            time += 5 + (8 * (countRate - 1));
+            time += 5 + (8 * (countRest - 1));
         }
-        else if (countRate == 1)
+        else if (countRest == 1)
         {
             time += 5;
         }
+        return time;
     }
 };
 class FastCamel : public GroundTransport  // Верблюд-быстроход
@@ -163,7 +155,7 @@ int main()
 
     Camel Camel(distance);
     Camel.PrintInfo();
-    Camel.printdistance();
+    std::cout << Camel.TimePassage() << std::endl;
 
     Broom broom(distance);
     //broom.PrintInfo();
